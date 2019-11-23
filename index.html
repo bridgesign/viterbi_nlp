@@ -13087,13 +13087,12 @@ Let us decompose this complex sentence above into different parts so as to under
 <br />
 <img src="emoji_HMM.png" style="height:30%;width: 30%">
 <br />
-The figure above (given in the tutorial) shows that you have two arrows from the <em>Start</em>. The two values over the two arrows are actually the initial probabilities that the person is happy or sad. The value over the arrow from <em>happy face</em> to the <em>sweaty smile</em> emoji is the probability that the emoji is <em>sweaty smile</em> emoji given that she is happy. The other values over arrows from happy or sad face to emojis are also probabilites similar to the <em>happy face</em> and <em>sweaty smile</em> emoji case.</p>
-<p>The mood of a person in future depends on how previously the mood was and how it is currently. But she has mood swings, which are mostly chaotic anyway, so for saving from large calculations, assume that her mood only depends on her current mood. This is the assumption of Markov Models - "The future states depend only on the current state and not on the events that occured before."</p>
+The figure above (given in the tutorial) shows that you have two arrows from the <em>Start</em>. The two values over the two arrows are actually the initial probabilities that the person is happy or sad. The value over the arrow from <em>happy mood</em> to the <span style='font-size:14px;'>&#128517;</span> emoji is the probability that the emoji is <span style='font-size:14px;'>&#128517;</span> emoji given that she is happy. The other values over arrows from happy or sad face to emojis are also probabilites similar to the <em>happy mood</em> and <span style='font-size:14px;'>&#128517;</span> emoji case.</p>
+<p>The mood of a person in future depends on how the mood was previously and how it is currently. But she has mood swings, which are mostly chaotic anyway, so for saving from large calculations, assume that her mood only depends on her current mood. This is the assumption of Markov Models - "The future states depend only on the current state and not on the events that occured before."</p>
 <p>You don't know the sequence of her mood. As such, the sequence is "hidden" from you. Hence, the name, Hidden Markov Model.</p>
-<p>The value over the arrow going from <em>happy face</em> to itself is the probability that her mood was happy and remained happy. Similarly, the value over the arrow from <em>happy face</em> to <em>sad face</em> is the probability that her mood was happy and then became sad.
+<p>The value over the arrow going from <em>happy mood</em> to itself is the probability that her mood was happy and remained happy. Similarly, the value over the arrow from <em>happy mood</em> to <em>sad face</em> is the probability that her mood was happy and then became sad.
 <br />
-What you want to find is the most likely sequence of her moods from the sequence of emojis. Let us make a simple notation for ease. Let us represent that her mood is happy by $H$ and sad by $S$. Similarly, let the emojis <span style='font-size:14px;'>&#128535;</span>, <span style='font-size:14px;'>&#128578;</span>, <span style='font-size:14px;'>&#128517;</span> be 
-represented by $E_1$, $E_2$ and $E_3$ and construct a table to note down the probabilities.</p>
+What you want to find is the most likely sequence of her moods from the sequence of emojis. Let us make a simple notation for ease. Let us represent that her mood is happy by $H$ and sad by $S$. Construct a table to note down the probabilities.</p>
 <table>
 <thead><tr>
 <th>-</th>
@@ -13167,7 +13166,7 @@ So to get the sequence, all you have to do is to keep track of the row from whic
 <br />
 You did not require to look through all possible sequences. This is because we have made the assuumption that the next state only depends on the current state.</p>
 <hr>
-<h1 id="-POS-Tagging-"><center> POS Tagging </center><a class="anchor-link" href="#-POS-Tagging-">&#182;</a></h1><p>POS tagging stands for Parts-of-Speech tagging. It is an important task in Natural Language Processing and we can use Viterbi algorithm to do so. We will understand how this is done and at the saame time use this as an example to see exactly how this we calculate the table. You surely want to make sure that you know the correct procedure before trying to predict your girlfriend's mood right?
+<h1 id="-POS-Tagging-"><center> POS Tagging </center><a class="anchor-link" href="#-POS-Tagging-">&#182;</a></h1><p>POS tagging stands for Parts-of-Speech tagging. It is an important task in Natural Language Processing and we can use Viterbi algorithm to do so. We will understand how this is done and at the same time use this as an example to see exactly how we calculate the table.
 <br />
 Let us take a simple sentence 'Tall boy runs'. We can easily make out that 'Tall' is an adjective, 'boy' is a noun and 'runs' is a verb. Before diving into seeing the working of the algorithm (I know you don't want to wait), we need to look at the assumptions. Without these assumptions, we cannot use the algorithm. There are two assumptions:</p>
 <ol>
