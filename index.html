@@ -7,7 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 
 <style type="text/css">
     /*!
@@ -13093,9 +13093,9 @@ The figure above (given in the tutorial) shows that you have two arrows from the
 <p>The value over the arrow going from <em>happy mood</em> to itself is the probability that her mood was happy and remained happy. Similarly, the value over the arrow from <em>happy mood</em> to <em>sad face</em> is the probability that her mood was happy and then became sad.
 <br />
 What you want to find is the most likely sequence of her moods from the sequence of emojis. Let us make a simple notation for ease. Let us represent that her mood is happy by $H$ and sad by $S$. Construct a table to note down the probabilities.</p>
-<table>
+<table class="table1">
 <thead><tr>
-<th>-</th>
+<th></th>
 <th><span style='font-size:14px;'>&#128535;</span></th>
 <th><span style='font-size:14px;'>&#128578;</span></th>
 <th><span style='font-size:14px;'>&#128517;</span></th>
@@ -13103,13 +13103,13 @@ What you want to find is the most likely sequence of her moods from the sequence
 </thead>
 <tbody>
 <tr>
-<td>$H$</td>
+<th class="row">$H$</th>
 <td>$0.6$</td>
 <td>$0.1$</td>
 <td>$0.3$</td>
 </tr>
 <tr>
-<td>$S$</td>
+<th class="row">$S$</th>
 <td>$0.2$</td>
 <td>$0.5$</td>
 <td>$0.3$</td>
@@ -13125,33 +13125,32 @@ $$P(M|E) = \frac{P(E|M)P(M)}{P(E)} = \prod_{k=1}^{n} \frac{P(e_k|m_k)P(m_k|m_{k-
 <br /></p>
 <p>According to the algorithm, we first draw a table of size $2 \times n$, where $n$ is the length of the sequence of the emojis.</p>
 <p><br /></p>
-<table>
+<table class="table1">
 <thead><tr>
-<th>-</th>
+<th></th>
 <th><em>$e_1$</em></th>
 <th><em>$e_2$</em></th>
 <th><em>$e_3$</em></th>
-<th><em>$...$</em></th>
+<th><em>...</em></th>
 <th><em>$e_n$</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>$H$</em></td>
-<td>1</td>
+<th class="row"><em>$H$</em></th>
 <td></td>
 <td></td>
 <td></td>
-<td>$...$</td>
+<td>...</td>
 <td></td>
 </tr>
 <tr>
-<td><em>$S$</em></td>
-<td>1</td>
+<th class="row"><em>$S$</em></th>
 <td></td>
 <td></td>
 <td></td>
-<td>$...$</td>
+<td>...</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -13175,9 +13174,9 @@ Let us take a simple sentence 'Tall boy runs'. We can easily make out that 'Tall
 </ol>
 <p>Probabilities of appearance of a word given a tag and the probability of a tag appearing after a specific tag is found by counting manually annotated texts.
 The tables of the probabilities are given below.</p>
-<table>
+<table class="table1">
 <thead><tr>
-<th>-</th>
+<th></th>
 <th>Noun</th>
 <th>Verb</th>
 <th>Adjective</th>
@@ -13185,19 +13184,19 @@ The tables of the probabilities are given below.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Noun</strong></td>
+<th class="row"><strong>Noun</strong></th>
 <td>0.2</td>
 <td>0.7</td>
 <td>0.1</td>
 </tr>
 <tr>
-<td><strong>Verb</strong></td>
+<th class="row"><strong>Verb</strong></th>
 <td>0.5</td>
 <td>0.1</td>
 <td>0.4</td>
 </tr>
 <tr>
-<td><strong>Adjective</strong></td>
+<th class="row"><strong>Adjective</strong></th>
 <td>0.6</td>
 <td>0.1</td>
 <td>0.3</td>
@@ -13205,9 +13204,9 @@ The tables of the probabilities are given below.</p>
 </tbody>
 </table>
 <p>The table shows the probability of a word given the tag.</p>
-<table>
+<table class="table1">
 <thead><tr>
-<th>-</th>
+<th></th>
 <th>Tall</th>
 <th>boy</th>
 <th>runs</th>
@@ -13215,19 +13214,19 @@ The tables of the probabilities are given below.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Noun</strong></td>
+<th class="row"><strong>Noun</strong></th>
 <td>0.07</td>
 <td>0.16</td>
 <td>0.14</td>
 </tr>
 <tr>
-<td><strong>Verb</strong></td>
+<th class="row"><strong>Verb</strong></th>
 <td>0.05</td>
 <td>0.01</td>
 <td>0.21</td>
 </tr>
 <tr>
-<td><strong>Adjective</strong></td>
+<th class="row"><strong>Adjective</strong></th>
 <td>0.14</td>
 <td>0.03</td>
 <td>0.03</td>
